@@ -51,22 +51,6 @@ namespace Lifepoem.Foundation.Utilities.Helpers
             }
         }
 
-        public static TOutput ConvertEnum<TOutput>(int value, TOutput defaultValue)
-        {
-            if (Enum.IsDefined(typeof(TOutput), value))
-                return (TOutput)Enum.ToObject(typeof(TOutput), value);
-            else
-                return defaultValue;
-        }
-
-        public static TOutput ConvertEnum<TOutput>(string value, TOutput defaultValue)
-        {
-            if (Enum.IsDefined(typeof(TOutput), value))
-                return (TOutput)Enum.Parse(typeof(TOutput), value);
-            else
-                return defaultValue;
-        }
-
         public static string ConvertString<TInput>(TInput obj)
         {
             return Convert(obj, string.Empty);
@@ -77,7 +61,15 @@ namespace Lifepoem.Foundation.Utilities.Helpers
             return Convert(obj, default(decimal));
         }
 
-        public static DateTime? GetDateTimeAllowNull(object data)
+        public static bool GetBoolean(object data)
+        {
+            if (data == DBNull.Value)
+                return false;
+            else
+                return System.Convert.ToBoolean(data);
+        }
+
+        public static DateTime? ConvertNullableDateTime(object data)
         {
             if (data == DBNull.Value)
                 return null;
@@ -93,13 +85,20 @@ namespace Lifepoem.Foundation.Utilities.Helpers
             }
         }
 
-
-        public static bool GetBoolean(object data)
+        public static TOutput ConvertEnum<TOutput>(int value, TOutput defaultValue)
         {
-            if (data == DBNull.Value)
-                return false;
+            if (Enum.IsDefined(typeof(TOutput), value))
+                return (TOutput)Enum.ToObject(typeof(TOutput), value);
             else
-                return System.Convert.ToBoolean(data);
+                return defaultValue;
+        }
+
+        public static TOutput ConvertEnum<TOutput>(string value, TOutput defaultValue)
+        {
+            if (Enum.IsDefined(typeof(TOutput), value))
+                return (TOutput)Enum.Parse(typeof(TOutput), value);
+            else
+                return defaultValue;
         }
 
         #endregion
@@ -125,10 +124,15 @@ namespace Lifepoem.Foundation.Utilities.Helpers
 
         public static List<string> SplitString(string str)
         {
+            return SplitString(str, new char[] { ',', ';' });
+        }
+
+        public static List<string> SplitString(string str, char[] separator)
+        {
             List<string> list = new List<string>();
             if (str != null && str.Length > 0)
             {
-                list = str.Split(new char[] { ',', ';' }).ToList();
+                list = str.Split(separator).ToList();
             }
             return list;
         }
