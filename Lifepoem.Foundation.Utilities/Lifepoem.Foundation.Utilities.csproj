@@ -46,6 +46,10 @@
     <Compile Include="DBHelpers\SqlProcedure.cs" />
     <Compile Include="Exceptions\DataProcedureException.cs" />
     <Compile Include="Helpers\Tools.cs" />
+    <Compile Include="Logging\DefaultLogger.cs" />
+    <Compile Include="Logging\DummyLogger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
