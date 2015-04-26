@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IR.API.Foundation.Utilities.IO
+namespace Lifepoem.Foundation.Utilities
 {
     #region Event Handler Delegates
 

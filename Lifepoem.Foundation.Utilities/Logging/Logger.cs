@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 
-namespace IR.API.Foundation.Utilities.Logging
+namespace Lifepoem.Foundation.Utilities.Logging
 {
     /// <summary>
     /// File logger implementation

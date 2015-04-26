@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Lifepoem.Foundation.Utilities.Helpers
+namespace Lifepoem.Foundation.Utilities
 {
     public static class Tools
     {

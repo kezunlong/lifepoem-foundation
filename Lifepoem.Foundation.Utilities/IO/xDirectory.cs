@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace IR.API.Foundation.Utilities.IO
+namespace Lifepoem.Foundation.Utilities
 {
     /// <summary>
     /// xDirectory - Copy Files and SubFolders.

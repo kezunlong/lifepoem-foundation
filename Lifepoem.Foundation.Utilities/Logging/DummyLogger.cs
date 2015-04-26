@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IR.API.Foundation.Utilities.Logging
+namespace Lifepoem.Foundation.Utilities.Logging
 {
     /// <summary>
     /// A dummy logger that doesn't log anything.

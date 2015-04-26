@@ -40,12 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Console\ConsoleColorWriter.cs" />
+    <Compile Include="Console\ConsoleHelper.cs" />
     <Compile Include="DBHelpers\DefaultDataProcedure.cs" />
     <Compile Include="DBHelpers\IDataProcedure.cs" />
     <Compile Include="DBHelpers\OleDbProcedure.cs" />
     <Compile Include="DBHelpers\SqlProcedure.cs" />
     <Compile Include="Exceptions\DataProcedureException.cs" />
+    <Compile Include="Helpers\Calculator.cs" />
+    <Compile Include="Helpers\ParameterParser.cs" />
     <Compile Include="Helpers\Tools.cs" />
+    <Compile Include="IO\xDirectory.cs" />
+    <Compile Include="IO\xDirectoryEventHandler.cs" />
+    <Compile Include="IO\xDirectoryStatus.cs" />
     <Compile Include="Logging\DefaultLogger.cs" />
     <Compile Include="Logging\DummyLogger.cs" />
     <Compile Include="Logging\ILogger.cs" />
