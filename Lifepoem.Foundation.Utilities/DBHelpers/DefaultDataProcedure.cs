@@ -186,12 +186,6 @@ namespace Lifepoem.Foundation.Utilities.DBHelpers
             return ExecuteDataTable(CultureInfo.CurrentCulture);
         }
 
-        public DataTable ExecuteDataTable(int start, int length, string orderBy)
-        {
-            ConvertPagingCommand(start, length, orderBy);
-            return ExecuteDataTable(CultureInfo.CurrentCulture);
-        }
-
         public System.Data.DataTable ExecuteDataTable(CultureInfo culture)
         {
             DataSet ds = ExecuteDataSet(culture);
@@ -266,6 +260,18 @@ namespace Lifepoem.Foundation.Utilities.DBHelpers
 
         #endregion
 
+        #region Paging functions
+
+        public DataTable ExecuteDataTable(int start, int length, string orderBy)
+        {
+            ConvertPagingCommand(start, length, orderBy);
+            return ExecuteDataTable(CultureInfo.CurrentCulture);
+        }
+
+        protected abstract void ConvertPagingCommand(int start, int length, string orderBy);
+
+        #endregion
+
         #region Virtual functions
 
         protected abstract DbCommand GetDbCommand();
@@ -276,7 +282,7 @@ namespace Lifepoem.Foundation.Utilities.DBHelpers
 
         protected abstract int GetLastInsertId();
 
-        protected abstract void ConvertPagingCommand(int start, int length, string orderBy);
+        
 
 
         /// <summary>

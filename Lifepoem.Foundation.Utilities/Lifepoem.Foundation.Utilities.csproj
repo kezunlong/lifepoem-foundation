@@ -45,6 +45,7 @@
     <Compile Include="DBHelpers\DefaultDataProcedure.cs" />
     <Compile Include="DBHelpers\IDataProcedure.cs" />
     <Compile Include="DBHelpers\OleDbProcedure.cs" />
+    <Compile Include="DBHelpers\PagingOption.cs" />
     <Compile Include="DBHelpers\SqlProcedure.cs" />
     <Compile Include="Exceptions\DataProcedureException.cs" />
     <Compile Include="Helpers\Calculator.cs" />

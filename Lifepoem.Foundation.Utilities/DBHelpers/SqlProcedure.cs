@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lifepoem.Foundation.Utilities.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
@@ -73,13 +74,9 @@ namespace Lifepoem.Foundation.Utilities.DBHelpers
             return lastInsertId;
         }
 
-        //protected override int GetLastInsertId()
-        //{
-        //    string sql = "SELECT @@identity";
-        //    SqlProcedure proc = new SqlProcedure(sql, ConnectionString);
-        //    proc.CommandType = System.Data.CommandType.Text;
-        //    return int.Parse(proc.ExecuteScalar().ToString());
-        //}
+        #endregion
+
+        #region Paging Functions
 
         /// <summary>
         /// Use Row_Number function to implement high efficiency paging.
@@ -110,6 +107,53 @@ WHERE Row >= {3} and Row < {4}",
                                 start + length);
 
             this.CommandText = sql;
+        }
+
+        /// <summary>
+        /// Pagin method using high efficiency and simple paging stored procedure that based on RowNumber
+        /// The record number is not returned by this stored procedure, because it's better to do that only once
+        /// when the user click query button
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="where"></param>
+        /// <param name="pages"></param>
+        /// <returns></returns>
+        public DataTable GetPagingRecord(PagingOption option)
+        {
+
+
+            if (option == null) // return all records
+            {
+                return ExecuteDataTable();
+            }
+            else
+            {
+                if (CommandType == CommandType.StoredProcedure)
+                {
+                    throw new DataProcedureException("The paging record does not support stored procedure as data source.");
+                }
+                if (Parameters.Count > 0)
+                {
+                    throw new DataProcedureException("The paging record does not support data source with parameters.");
+                }
+
+                string sql = CommandText;
+
+                if (option.GetRecordCount)
+                {
+                    CommandText = string.Format("SELECT COUNT(*) RecordCount FROM ({0}) _INNER", sql);
+                    option.RecordCount = Tools.Convert(ExecuteScalar(), 0);
+                }
+
+                Clear();
+                CommandText = option.PagingStoredProcedure;
+                CommandType = CommandType.StoredProcedure;
+                Parameters.AddWithValue("@SourceSql", sql);
+                Parameters.AddWithValue("@Start", option.Start);
+                Parameters.AddWithValue("@Length", option.Length);
+                Parameters.AddWithValue("@OrderBy", option.OrderBy);
+                return ExecuteDataTable();
+            }
         }
 
         #endregion

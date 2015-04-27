@@ -62,7 +62,7 @@ namespace Lifepoem.Foundation.Utilities
                 {
                     pname = args[i];
                     i++;
-                    if (!IsParameterName(args[i]))
+                    if (args.Length > i && !IsParameterName(args[i]))
                     {
                         pvalue = args[i];
                         i++;
