@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,7 @@
     <Compile Include="DBHelpers\PagingOption.cs" />
     <Compile Include="DBHelpers\SqlProcedure.cs" />
     <Compile Include="Exceptions\DataProcedureException.cs" />
+    <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
     <Compile Include="Helpers\Calculator.cs" />
     <Compile Include="Helpers\ParameterParser.cs" />
     <Compile Include="Helpers\Tools.cs" />
