@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lifepoem.Foundation.Utilities.Test</RootNamespace>
     <AssemblyName>Lifepoem.Foundation.Utilities.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,10 +57,15 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CalculatorTest.cs" />
+    <Compile Include="CharacterPinyinTest.cs" />
     <Compile Include="ParameterParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lifepoem.Foundation.ChineseCharacterPinyin\Lifepoem.Foundation.ChineseCharacterPinyin.csproj">
+      <Project>{77ab5957-48da-42ae-bebe-1b9cad4174db}</Project>
+      <Name>Lifepoem.Foundation.ChineseCharacterPinyin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lifepoem.Foundation.Utilities\Lifepoem.Foundation.Utilities.csproj">
       <Project>{6c0e0a30-125d-4d8c-bfa1-e0b3e5cfc35f}</Project>
       <Name>Lifepoem.Foundation.Utilities</Name>

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Utiliti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Utilities.Test", "Lifepoem.Foundation.Utilities.Test\Lifepoem.Foundation.Utilities.Test.csproj", "{D2997834-EAFD-45A3-A0B1-5EE20A709F28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.ChineseCharacterPinyin", "Lifepoem.Foundation.ChineseCharacterPinyin\Lifepoem.Foundation.ChineseCharacterPinyin.csproj", "{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{D2997834-EAFD-45A3-A0B1-5EE20A709F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2997834-EAFD-45A3-A0B1-5EE20A709F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2997834-EAFD-45A3-A0B1-5EE20A709F28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

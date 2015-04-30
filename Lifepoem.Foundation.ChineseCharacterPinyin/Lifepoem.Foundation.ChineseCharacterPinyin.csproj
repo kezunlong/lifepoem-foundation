@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C0E0A30-125D-4D8C-BFA1-E0B3E5CFC35F}</ProjectGuid>
+    <ProjectGuid>{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lifepoem.Foundation.Utilities</RootNamespace>
-    <AssemblyName>Lifepoem.Foundation.Utilities</AssemblyName>
+    <RootNamespace>Lifepoem.Foundation.ChineseCharacterPinyin</RootNamespace>
+    <AssemblyName>Lifepoem.Foundation.ChineseCharacterPinyin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,13 +28,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,26 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Console\ConsoleColorWriter.cs" />
-    <Compile Include="Console\ConsoleHelper.cs" />
-    <Compile Include="DBHelpers\DefaultDataProcedure.cs" />
-    <Compile Include="DBHelpers\IDataProcedure.cs" />
-    <Compile Include="DBHelpers\OleDbProcedure.cs" />
-    <Compile Include="DBHelpers\PagingOption.cs" />
-    <Compile Include="DBHelpers\SqlProcedure.cs" />
-    <Compile Include="Exceptions\DataProcedureException.cs" />
-    <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
-    <Compile Include="Helpers\Calculator.cs" />
-    <Compile Include="Helpers\ParameterParser.cs" />
-    <Compile Include="Helpers\Tools.cs" />
-    <Compile Include="IO\xDirectory.cs" />
-    <Compile Include="IO\xDirectoryEventHandler.cs" />
-    <Compile Include="IO\xDirectoryStatus.cs" />
-    <Compile Include="Logging\DefaultLogger.cs" />
-    <Compile Include="Logging\DummyLogger.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="PinyinEncoding\PinyinEncodingFactory.cs" />
+    <Compile Include="PinyinEncoding\PinyinEncodingGBK.cs" />
+    <Compile Include="PinyinEncoding\PinyinEncodingNoTune.cs" />
+    <Compile Include="CharacterPinyinMappingItem.cs" />
+    <Compile Include="PinyinEncoding\DefaultPinyinEncoding.cs" />
+    <Compile Include="PinyinEncoding\PinyinEncodingGB2313.cs" />
+    <Compile Include="EncodingFileReader\GBEncodingFileReader.cs" />
+    <Compile Include="PinyinEncoding\IPinyinEncoding.cs" />
+    <Compile Include="EncodingFileReader\IEncodingFileReader.cs" />
+    <Compile Include="EncodingFileReader\NoTuneEncodingFileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EncodingFile\hzbm_gb2312.txt" />
+    <EmbeddedResource Include="EncodingFile\hzbm_gbk.txt" />
+    <EmbeddedResource Include="EncodingFile\hzbm_notune.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
