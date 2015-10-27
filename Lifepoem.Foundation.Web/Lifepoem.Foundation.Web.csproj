@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C0E0A30-125D-4D8C-BFA1-E0B3E5CFC35F}</ProjectGuid>
+    <ProjectGuid>{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lifepoem.Foundation.Utilities</RootNamespace>
-    <AssemblyName>Lifepoem.Foundation.Utilities</AssemblyName>
+    <RootNamespace>Lifepoem.Foundation.Web</RootNamespace>
+    <AssemblyName>Lifepoem.Foundation.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -35,8 +35,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,27 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Console\ConsoleColorWriter.cs" />
-    <Compile Include="Console\ConsoleHelper.cs" />
-    <Compile Include="DBHelpers\DefaultDataProcedure.cs" />
-    <Compile Include="DBHelpers\IDataProcedure.cs" />
-    <Compile Include="DBHelpers\OleDbProcedure.cs" />
-    <Compile Include="DBHelpers\PagingOption.cs" />
-    <Compile Include="DBHelpers\SqlProcedure.cs" />
-    <Compile Include="Exceptions\DataProcedureException.cs" />
-    <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
-    <Compile Include="Helpers\Calculator.cs" />
-    <Compile Include="Helpers\ParameterParser.cs" />
-    <Compile Include="Helpers\Tools.cs" />
-    <Compile Include="Helpers\WebPagingOption.cs" />
-    <Compile Include="IO\xDirectory.cs" />
-    <Compile Include="IO\xDirectoryEventHandler.cs" />
-    <Compile Include="IO\xDirectoryStatus.cs" />
-    <Compile Include="Logging\DefaultLogger.cs" />
-    <Compile Include="Logging\DummyLogger.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="MvcPaging\MvcPaging.cs" />
+    <Compile Include="MvcPaging\PagingHelper.cs" />
+    <Compile Include="MvcPaging\PagingUIOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Lifepoem.Foundation.Utilities\Lifepoem.Foundation.Utilities.csproj">
+      <Project>{6c0e0a30-125d-4d8c-bfa1-e0b3e5cfc35f}</Project>
+      <Name>Lifepoem.Foundation.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
