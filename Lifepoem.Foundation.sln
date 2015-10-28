@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Utilities", "Lifepoem.Foundation.Utilities\Lifepoem.Foundation.Utilities.csproj", "{6C0E0A30-125D-4D8C-BFA1-E0B3E5CFC35F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Utilities.Test", "Lifepoem.Foundation.Utilities.Test\Lifepoem.Foundation.Utilities.Test.csproj", "{D2997834-EAFD-45A3-A0B1-5EE20A709F28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.ChineseCharacterPinyin", "Lifepoem.Foundation.ChineseCharacterPinyin\Lifepoem.Foundation.ChineseCharacterPinyin.csproj", "{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Web", "Lifepoem.Foundation.Web\Lifepoem.Foundation.Web.csproj", "{2FD35320-9B1E-46A5-8508-0FA10955D1E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Web", "Lifepoem.Foundation.Web\Lifepoem.Foundation.Web.csproj", "{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +29,10 @@ Global
 		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77AB5957-48DA-42AE-BEBE-1B9CAD4174DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FD35320-9B1E-46A5-8508-0FA10955D1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FD35320-9B1E-46A5-8508-0FA10955D1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FD35320-9B1E-46A5-8508-0FA10955D1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FD35320-9B1E-46A5-8508-0FA10955D1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
