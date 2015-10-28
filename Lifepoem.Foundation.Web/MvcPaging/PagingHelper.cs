@@ -15,64 +15,33 @@ namespace Lifepoem.Foundation.Web.MVC
 
         #region Pagination
 
-        /// <summary>
-        /// Pagination Layout in CDC web page:
-        /// <div>
-        ///     <div class="pull-right">
-        ///         @Html.AjaxPagination(Model.PagingOption)
-        ///     </div>
-        ///     <div class="clearfix"></div>
-        /// </div>
-        /// 
-        /// Pagination will be composed by a two columns table,
-        /// one cell is for custom info, and the other is for ul list of hyperlinks.
-        /// 
-        /// If we need to add other information after the page links, we should use this method to do clearfix.
-        /// </summary>
-        /// <param name="html"></param>
-        /// <param name="option"></param>
-        /// <returns></returns>
-        public static MvcHtmlString CdcAjaxPagination(this HtmlHelper html, WebPagingOption option)
+        public static MvcHtmlString AjaxPagination(this HtmlHelper html, WebPagingOption option)
         {
-            var divContainer = new TagBuilder("div");
-            var divRight = new TagBuilder("div");
-            divRight.AddCssClass("pull-right");
-            divRight.InnerHtml = AjaxPagination(html, option).ToHtmlString();
-            var divClearFix = new TagBuilder("div");
-            divClearFix.AddCssClass("clearfix");
-            divContainer.InnerHtml = divRight.ToString() + divClearFix.ToString();
-            return new MvcHtmlString(divContainer.ToString());
+            return AjaxPagination(html, option, PagingUIFactory.GetBootstrapPagingUI());
         }
 
-        public static MvcHtmlString AjaxPagination(this HtmlHelper html, WebPagingOption option)
+        public static MvcHtmlString AjaxPagination(this HtmlHelper html, WebPagingOption option, PagingUIOption uiOption)
         {
             MvcPaging paging = new MvcPaging()
             {
                 PagingOption = option,
-                UIOption = PagingUIFactory.GetBootstrapPagingUI(),
+                UIOption = uiOption,
                 PageUrl = x => string.Format("javascript: Search({0})", x.ToString())
             };
             return paging.PageLinks();
         }
 
-        public static MvcHtmlString CdcHyperlinkPagination(this HtmlHelper html, WebPagingOption option, Func<int, string> pageUrl)
+        public static MvcHtmlString HyperlinkPagination(this HtmlHelper html, WebPagingOption option, Func<int, string> pageUrl)
         {
-            var divContainer = new TagBuilder("div");
-            var divRight = new TagBuilder("div");
-            divRight.AddCssClass("pull-right");
-            divRight.InnerHtml = HyperlinkPagination(html, option, pageUrl).ToHtmlString();
-            var divClearFix = new TagBuilder("div");
-            divClearFix.AddCssClass("clearfix");
-            divContainer.InnerHtml = divRight.ToString() + divClearFix.ToString();
-            return new MvcHtmlString(divContainer.ToString());
+            return HyperlinkPagination(html, option, pageUrl, PagingUIFactory.GetBootstrapPagingUI());
         }
 
-        public static MvcHtmlString HyperlinkPagination(this HtmlHelper html, WebPagingOption option, Func<int, string> pageUrl)
+        public static MvcHtmlString HyperlinkPagination(this HtmlHelper html, WebPagingOption option, Func<int, string> pageUrl, PagingUIOption uiOption)
         {
             MvcPaging paging = new MvcPaging()
             {
                 PagingOption = option,
-                UIOption = PagingUIFactory.GetBootstrapPagingUI(),
+                UIOption = uiOption,
                 PageUrl = pageUrl
             };
             return paging.PageLinks();

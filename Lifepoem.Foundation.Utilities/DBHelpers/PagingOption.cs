@@ -7,6 +7,10 @@ namespace Lifepoem.Foundation.Utilities.DBHelpers
 {
     public class PagingOption
     {
+        /// <summary>
+        /// The first record to obtain
+        /// start from 1, so Start equals 11 if Length is 10
+        /// </summary>
         public int Start { get; set; }
 
         public int Length { get; set; }

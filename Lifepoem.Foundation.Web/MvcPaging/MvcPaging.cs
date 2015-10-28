@@ -13,20 +13,21 @@ namespace Lifepoem.Foundation.Web.MVC
     /// In order to support displaying custom information in left or right, we need to add table layout
     /// Because the pagination has a "display:inline-block" attribute, make it impossible to display info in the same line.
     /// 
-    ///             <span class="custominfo">custom information</span>
-    ///             <ul>
-    ///                 <li><a href="#">First</a></li>
-    ///                 <li><a href="#">Previous</a></li>
-    ///                 <li><a href="#">...</a></li>
-    ///                 <li><a href="#">1</a></li>
-    ///                 <li class="active"><a disabled="disabled" href="#">2</a></li>
-    ///                 <li><a href="#">3</a></li>
-    ///                 <li><a href="#">4</a></li>
-    ///                 <li><a href="#">5</a></li>
-    ///                 <li><a href="#">...</a></li>
-    ///                 <li><a href="#">Next</a></li>
-    ///                 <li><a href="#">Last</a></li>
-    ///             </ul>
+    ///     <span class="custominfo">custom information</span>
+    ///     <ul>
+    ///         <li><a href="#">First</a></li>
+    ///         <li><a href="#">Previous</a></li>
+    ///         <li><a href="#">...</a></li>
+    ///         <li><a href="#">1</a></li>
+    ///         <li class="active"><a disabled="disabled" href="#">2</a></li>
+    ///         <li><a href="#">3</a></li>
+    ///         <li><a href="#">4</a></li>
+    ///         <li><a href="#">5</a></li>
+    ///         <li><a href="#">...</a></li>
+    ///         <li><a href="#">Next</a></li>
+    ///         <li><a href="#">Last</a></li>
+    ///     </ul>
+    ///     
     /// </summary>
     public class MvcPaging
     {
@@ -49,6 +50,7 @@ namespace Lifepoem.Foundation.Web.MVC
             AddCssClass(ulTag, UIOption.CssClass);
 
             StringBuilder links = new StringBuilder();
+            
             links.Append(GetPageURL(1, UIOption.FirstPageText));
             links.Append(GetPageURL(PagingOption.CurrentPage - 1, UIOption.PrevPageText));
 

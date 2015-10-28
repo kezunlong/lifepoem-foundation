@@ -32,6 +32,10 @@ namespace Lifepoem.Foundation.Web.MVC
                 PrevPageText = "Previous",
                 NextPageText = "Next",
                 LastPageText = "Last",
+                CssClass = "pagination pagination-sm",
+                PageCssClass = "",
+                CurrentPageCssClass = "active",
+                DisablePageCssClass = "disabled",
                 TotalPageLink = 10,
                 CustomInfoHTML = string.Empty,
                 CustomInfoPosition = string.Empty,
@@ -40,6 +44,24 @@ namespace Lifepoem.Foundation.Web.MVC
         }
 
         public static PagingUIOption GetBootstrapPagingUI()
+        {
+            return new PagingUIOption
+            {
+                FirstPageText = "<span class='glyphicon glyphicon-step-backward'></span>",
+                PrevPageText = "<span class='glyphicon glyphicon-chevron-left'></span>",
+                NextPageText = "<span class='glyphicon glyphicon-chevron-right'></span>",
+                LastPageText = "<span class='glyphicon glyphicon-step-forward'></span>",
+                CssClass = "pagination pagination-sm",
+                PageCssClass = "",
+                CurrentPageCssClass = "active",
+                DisablePageCssClass = "disabled",
+                TotalPageLink = 10,
+                CustomInfoHTML = "Records: {TotalItems}, Pages: {TotalPages}",
+                CustomInfoCssClass = "custominfo"
+            };
+        }
+
+        public static PagingUIOption GetFontAwesomeUI()
         {
             return new PagingUIOption
             {
