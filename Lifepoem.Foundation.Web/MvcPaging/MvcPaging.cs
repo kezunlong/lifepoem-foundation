@@ -1,4 +1,4 @@
-﻿using Lifepoem.Foundation.Utilities.Helpers;
+﻿using Lifepoem.Foundation.Web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,13 +44,21 @@ namespace Lifepoem.Foundation.Web.MVC
                 return new MvcHtmlString("");
             }
 
-            string customInfo = GetCustomInfoHTML();
-
             TagBuilder ulTag = new TagBuilder("ul");
             AddCssClass(ulTag, UIOption.CssClass);
+            ulTag.InnerHtml = GetPageLinks();
 
+            string customInfo = GetCustomInfoHTML();
+
+            string result = UIOption.CustomInfoPosition == CustomInfoPosition.Left ? "{0}{1}" : "{1}{0}";
+            result = string.Format(result, customInfo, ulTag.ToString());
+            return new MvcHtmlString(result.ToString());
+        }
+
+        private string GetPageLinks()
+        {
             StringBuilder links = new StringBuilder();
-            
+
             links.Append(GetPageURL(1, UIOption.FirstPageText));
             links.Append(GetPageURL(PagingOption.CurrentPage - 1, UIOption.PrevPageText));
 
@@ -77,12 +85,7 @@ namespace Lifepoem.Foundation.Web.MVC
             links.Append(GetPageURL(PagingOption.CurrentPage + 1, UIOption.NextPageText));
             links.Append(GetPageURL(PagingOption.TotalPages, UIOption.LastPageText));
 
-            ulTag.InnerHtml = links.ToString();
-
-            string result = "{0}{1}";
-            bool isCustomerInfoLeft = UIOption.CustomInfoPosition != "right";
-            result = string.Format(result, isCustomerInfoLeft ? customInfo : ulTag.ToString(), isCustomerInfoLeft ? ulTag.ToString() : customInfo);
-            return new MvcHtmlString(result.ToString());
+            return links.ToString();
         }
 
         private string GetCustomInfoHTML()

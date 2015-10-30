@@ -56,7 +56,6 @@
     <Compile Include="Helpers\Calculator.cs" />
     <Compile Include="Helpers\ParameterParser.cs" />
     <Compile Include="Helpers\Tools.cs" />
-    <Compile Include="Helpers\WebPagingOption.cs" />
     <Compile Include="IO\xDirectory.cs" />
     <Compile Include="IO\xDirectoryEventHandler.cs" />
     <Compile Include="IO\xDirectoryStatus.cs" />

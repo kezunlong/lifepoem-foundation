@@ -12,14 +12,26 @@ namespace Lifepoem.Foundation.Web.MVC
         public string PrevPageText { get; set; }
         public string NextPageText { get; set; }
         public string LastPageText { get; set; }
+        
         public int TotalPageLink { get; set; }
+        
         public string CssClass { get; set; }
         public string PageCssClass { get; set; }
         public string CurrentPageCssClass { get; set; }
         public string DisablePageCssClass { get; set; }
+
+        /// <summary>
+        /// In addition to static text, variables like {TotalItems}, {TotalPages}, {CurrentPage}, {ItemsPerPage} can be included
+        /// </summary>
         public string CustomInfoHTML { get; set; }
-        public string CustomInfoPosition { get; set; }
+        public CustomInfoPosition CustomInfoPosition { get; set; }
         public string CustomInfoCssClass { get; set; }
+    }
+
+    public enum CustomInfoPosition
+    {
+        Left,
+        Right
     }
 
     public class PagingUIFactory
@@ -38,7 +50,6 @@ namespace Lifepoem.Foundation.Web.MVC
                 DisablePageCssClass = "disabled",
                 TotalPageLink = 10,
                 CustomInfoHTML = string.Empty,
-                CustomInfoPosition = string.Empty,
                 CustomInfoCssClass = "custominfo"
             };
         }
