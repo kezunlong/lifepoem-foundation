@@ -1,12 +1,11 @@
-﻿using Lifepoem.Foundation.Web.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Lifepoem.Foundation.Web.MVC
+namespace Lifepoem.Web.Mvc.Pagination
 {
     /// <summary>
     /// Create Pagination using:

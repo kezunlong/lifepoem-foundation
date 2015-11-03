@@ -7,8 +7,8 @@
     <ProjectGuid>{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lifepoem.Foundation.Web</RootNamespace>
-    <AssemblyName>Lifepoem.Foundation.Web</AssemblyName>
+    <RootNamespace>Lifepoem.Web.Mvc</RootNamespace>
+    <AssemblyName>Lifepoem.Web.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -71,10 +71,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\WebPagingOption.cs" />
-    <Compile Include="MvcPaging\MvcPaging.cs" />
-    <Compile Include="MvcPaging\PagingHelper.cs" />
-    <Compile Include="MvcPaging\PagingUIOption.cs" />
+    <Compile Include="Pagination\WebPagingOption.cs" />
+    <Compile Include="Pagination\MvcPaging.cs" />
+    <Compile Include="Pagination\PagingHelper.cs" />
+    <Compile Include="Pagination\PagingUIOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +85,9 @@
       <Project>{6c0e0a30-125d-4d8c-bfa1-e0b3e5cfc35f}</Project>
       <Name>Lifepoem.Foundation.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -54,6 +54,7 @@
     <Compile Include="Exceptions\DataProcedureException.cs" />
     <Compile Include="Helpers\ActiveDirectoryHelper.cs" />
     <Compile Include="Helpers\Calculator.cs" />
+    <Compile Include="Helpers\MailHelper.cs" />
     <Compile Include="Helpers\ParameterParser.cs" />
     <Compile Include="Helpers\Tools.cs" />
     <Compile Include="IO\xDirectory.cs" />

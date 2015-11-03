@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lifepoem.Foundation.Web.Helpers
+namespace Lifepoem.Web.Mvc.Pagination
 {
     /// <summary>
     /// Paging option for web page navigation

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lifepoem.Foundation.Web.MVC
+namespace Lifepoem.Web.Mvc.Pagination
 {
     public class PagingUIOption
     {
