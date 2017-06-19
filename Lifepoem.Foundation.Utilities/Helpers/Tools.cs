@@ -185,6 +185,16 @@ namespace Lifepoem.Foundation.Utilities
             return result;
         }
 
+        public static string EncodeSqlQueryString(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
+
+            return str.Replace("'", "''");
+        }
+
         #endregion
 
         #region Deep Clone Functions
