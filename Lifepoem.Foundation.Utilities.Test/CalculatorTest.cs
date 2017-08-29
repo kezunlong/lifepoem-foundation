@@ -17,6 +17,7 @@ namespace Lifepoem.Foundation.Utilities.Test
             exp = "1 + 2 * 3 + 4";
             result = 11;
             Assert.AreEqual(c.Evaluate(exp), result);
+
         }
 
         [TestMethod]
